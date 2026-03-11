@@ -1,0 +1,7 @@
+# 后端 (Node.js)
+blog-backend/node_modules/
+blog-backend/.env
+# 前端 (Vue)
+blog-frontend-1/node_modules/
+blog-frontend-1/.vscode
+blog-frontend-1/.gitignore

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>博客列表</h1>
+  <ul id="list"></ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    axios.get("http://localhost:3000/api/posts")
+      .then(res => {
+        const ul = document.getElementById("list");
+        ul.style.backgroundColor = "yellow";
+        res.data.forEach(post => {
+          const li = document.createElement("li");
+          li.innerText = post.title;
+          ul.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

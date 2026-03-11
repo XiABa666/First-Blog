@@ -1,0 +1,13 @@
+const express = require("express");
+const db = require("../config/db");
+const router = express.Router();
+const auth = require("../middleware/auth");
+const { createPost, getPosts,myposts,search,id,like,dislike } = require("../controllers/postController");
+router.post("/", auth, createPost);
+router.get("/", getPosts);
+router.get("/my", auth, myposts);
+router.get("/search", search);
+router.get("/:id", id);
+router.post("/:id/like", auth, like);
+router.post("/:id/dislike", auth, dislike);
+module.exports = router;
