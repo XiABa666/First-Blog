@@ -42,7 +42,6 @@ exports.like= async (req, res) => {
   try {
     const { id } = req.params;
 
-    // 可选：检查评论是否存在
     const [existing] = await db.query("SELECT id FROM comments WHERE id = ?", [id]);
     if (existing.length === 0) {
       return res.status(404).json({ message: "评论不存在" });
@@ -65,7 +64,6 @@ exports.dislike= async (req, res) => {
    try {
     const { id } = req.params;
 
-    // 可选：检查评论是否存在
     const [existing] = await db.query("SELECT id FROM comments WHERE id = ?", [id]);
     if (existing.length === 0) {
       return res.status(404).json({ message: "评论不存在" });

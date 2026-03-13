@@ -13,7 +13,7 @@ exports.createPost = async (req, res) => {
             "INSERT INTO posts(title, content, user_id) VALUES(?, ?, ?)",
             [title, content, req.user.id]
         );
-        console.log(req.user);  // 可选：保留用户信息日志
+        console.log(req.user); 
         res.json({ message: "文章发布成功" });
     } catch (error) {
         console.error("创建文章失败:", error);
@@ -85,7 +85,7 @@ exports.like=async (req, res) => {
     try {
         const postId = req.params.id;
 
-        // 可选：检查帖子是否存在
+
         const [post] = await db.query("SELECT id FROM posts WHERE id = ?", [postId]);
         if (post.length === 0) {
             return res.status(404).json({ message: "帖子不存在" });
@@ -103,7 +103,7 @@ exports.dislike=async (req, res) => {
     try {
         const postId = req.params.id;
 
-        // 可选：检查帖子是否存在
+
         const [post] = await db.query("SELECT id FROM posts WHERE id = ?", [postId]);
         if (post.length === 0) {
             return res.status(404).json({ message: "帖子不存在" });

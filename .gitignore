@@ -5,3 +5,4 @@ blog-backend/.env
 blog-frontend-1/node_modules/
 blog-frontend-1/.vscode
 blog-frontend-1/.gitignore
+.gitignore

@@ -9,7 +9,6 @@ app.use(cors(
         ]
     }
 ));
-// 让 Express 能自动读取前端发来的 JSON 数据
 app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/posts", require("./routes/post"));
