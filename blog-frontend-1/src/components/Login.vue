@@ -6,15 +6,13 @@
 
       <div class="form-group">
         <label for="username">用户名</label>
-        <input id="username" v-model="username" type="text" placeholder="请输入用户名" class="form-input"
-          @input="clearError" />
+        <input id="username" v-model="username" type="text" placeholder="请输入用户名" class="form-input" />
       </div>
 
 
       <div class="form-group">
         <label for="password">密码</label>
-        <input id="password" v-model="password" type="password" placeholder="请输入密码" class="form-input"
-          @input="clearError" />
+        <input id="password" v-model="password" type="password" placeholder="请输入密码" class="form-input" />
       </div>
 
 
